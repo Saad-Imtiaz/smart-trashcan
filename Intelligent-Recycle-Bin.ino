@@ -155,21 +155,17 @@ void loop() {
     digitalWrite(green, LOW);
     Serial.println(notification);
 
-   int rr = ThingSpeak.setStatus(notification);
- //int y =  ThingSpeak.setTwitterTweet(twitter, notification);
- //ThingSpeak.setTwitterTweet(twitter, twitterAPIKey);
- 
+ThingSpeak.setStatus(notification);
+ThingSpeak.setTwitterTweet(twitter, notification);
 ThingSpeak.setTwitterTweet("hskeek1",notification);
-ThingSpeak.writeFields(myChannelNumber,myWriteAPIKey);
-
- int yy = ThingSpeak.writeFields(channelNumber,writeAPIKey);
-  
+int yy = ThingSpeak.writeFields(channelNumber,writeAPIKey);
  if(yy == 200){
     Serial.println("Twitter update successful.");
   }
   else{
     Serial.println("Problem updating channel. HTTP error code " + String(yy));
   }
+    delay (30000);
 
   }
   
@@ -181,8 +177,7 @@ ThingSpeak.writeFields(myChannelNumber,myWriteAPIKey);
   
   // Write to ThingSpeak. There are up to 8 fields in a channel, allowing you to store up to 8 different
   // pieces of information in a channel.  Here, we write to field 1.
-  int x = ThingSpeak.writeField(myChannelNumber, 1, cm, myWriteAPIKey);
- ThingSpeak.writeFields(channelNumber,writeAPIKey); 
+  int x = ThingSpeak.writeField(myChannelNumber, 1, cm, myWriteAPIKey); 
   if(x == 200){
     Serial.println("Channel update successful.");
   }
@@ -193,7 +188,6 @@ ThingSpeak.writeFields(myChannelNumber,myWriteAPIKey);
   
   delay(20000); // Wait 20 seconds to update the channel again
 }
-
 
 // This function attempts to set the ESP01 baudrate. Boards with additional hardware serial ports
 // can use 115200, otherwise software serial is limited to 19200.
