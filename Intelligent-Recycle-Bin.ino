@@ -155,9 +155,9 @@ void loop() {
     digitalWrite(green, LOW);
     Serial.println(notification);
 
-ThingSpeak.setStatus(notification);
-ThingSpeak.setTwitterTweet(twitter, notification);
-ThingSpeak.setTwitterTweet("hskeek1",notification);
+int a = ThingSpeak.setStatus(notification);
+int b = ThingSpeak.setTwitterTweet(twitter, notification);
+int c = ThingSpeak.setTwitterTweet("hskeek1",notification);
 int yy = ThingSpeak.writeFields(channelNumber,writeAPIKey);
  if(yy == 200){
     Serial.println("Twitter update successful.");
