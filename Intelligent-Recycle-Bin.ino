@@ -155,11 +155,13 @@ void loop() {
     digitalWrite(green, LOW);
     Serial.println(notification);
 
-int a = ThingSpeak.setStatus(notification);
-int b = ThingSpeak.setTwitterTweet(twitter, notification);
-int c = ThingSpeak.setTwitterTweet("hskeek1",notification);
-int yy = ThingSpeak.writeFields(channelNumber,writeAPIKey);
- if(yy == 200){
+ThingSpeak.setStatus(notification);
+ThingSpeak.setTwitterTweet(twitter, notification);
+ThingSpeak.writeFields(channelNumber,writeAPIKey);
+ThingSpeak.setTwitterTweet("hskeek1",notification);
+ThingSpeak.writeFields(channelNumber,writeAPIKey);
+
+    /*if(yy == 200){
     Serial.println("Twitter update successful.");
   }
   else{
@@ -173,7 +175,7 @@ int yy = ThingSpeak.writeFields(channelNumber,writeAPIKey);
     digitalWrite(green, HIGH);
     digitalWrite(red, LOW);
   }
-  
+  */
   
   // Write to ThingSpeak. There are up to 8 fields in a channel, allowing you to store up to 8 different
   // pieces of information in a channel.  Here, we write to field 1.
