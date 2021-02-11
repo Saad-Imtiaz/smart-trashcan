@@ -160,7 +160,7 @@ ThingSpeak.setTwitterTweet(twitter, notification);
 ThingSpeak.writeFields(channelNumber,writeAPIKey);
 ThingSpeak.setTwitterTweet("hskeek1",notification);
 ThingSpeak.writeFields(channelNumber,writeAPIKey);
-
+  }
     /*if(yy == 200){
     Serial.println("Twitter update successful.");
   }
