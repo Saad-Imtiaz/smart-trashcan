@@ -5,11 +5,11 @@
 #include "ThingSpeak.h" // always include thingspeak header file after other header files and custom macros
 
 
-String twitterAPIKey = "5E8PUPRLFWA74YUP";
-String twitter = "hskeek1";
+String twitterAPIKey = "xxx";
+String twitter = "xxx";
 //int writeFields(unsigned long channelNumber, const char * writeAPIKey)
-unsigned long channelNumber = 1291602;
-const char *  writeAPIKey = "5E8PUPRLFWA74YUP";
+unsigned long channelNumber = xxx;
+const char *  writeAPIKey = "xxx";
 
 char ssid[] = SECRET_SSID;    //  your network SSID (name) 
 char pass[] = SECRET_PASS;   // your network password
